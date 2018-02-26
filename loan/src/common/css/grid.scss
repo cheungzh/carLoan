@@ -1,0 +1,63 @@
+.row {
+  @include clearFix;
+  box-sizing: border-box;
+  width: 100%;
+  height: auto;
+}
+
+//定义最大分割列数
+$grid_columns: 24;
+
+@mixin base_grid ($index,$size) {
+  .#{$size}-#{$index} {
+    position: relative;
+    float: left;
+    box-sizing: border-box;
+    min-height: 36px;
+  }
+}
+@mixin calc_grid_columns ($index,$size,$type) {
+  @if ($type == width) and ($index > 0) {
+    .#{$size}-#{$index} {
+      width: percentage($index/$grid_columns);
+    }
+  }
+  @if ($type == push) and ($index == 0) {
+    .#{$size}-push-#{$index} {
+      left: auto;
+    }
+  }
+  @if ($type == push) and ($index > 0) {
+    .#{$size}-push-#{$index} {
+      left: percentage($index/$grid_columns);
+    }
+  }
+  @if ($type == pull) and ($index == 0) {
+    .#{$size}-pull-#{$index} {
+      right: auto;
+    }
+  }
+  @if ($type == pull) and ($index > 0) {
+    .#{$size}-pull-#{$index} {
+      right: percentage($index/$grid_columns);
+    }
+  }
+  @if ($type == offset) {
+    .#{$size}-offset-#{$index} {
+      margin-left: percentage($index/$grid_columns);
+    }
+  }
+}
+
+@mixin loop_grid_columns($grid_columns,$size,$type) {
+  @for $i from 0 through $grid_columns {
+    @include base_grid($i,$size);
+    @include calc_grid_columns($i,$size,$type)
+  }
+}
+@mixin generate_grid($size) {
+  @include loop_grid_columns($grid_columns,$size,width);
+  @include loop_grid_columns($grid_columns,$size,pull);
+  @include loop_grid_columns($grid_columns,$size,push);
+  @include loop_grid_columns($grid_columns,$size,offset);
+}

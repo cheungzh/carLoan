@@ -1,0 +1,68 @@
+/*按钮点击动画*/
+@keyframes defaultAnimation {
+  0%{
+    background-color: #f7f7f7;
+    border: 1px solid #dddee1;
+    color: #495060;
+  }
+  100%{
+    background-color: #fff;
+    border-color: #2d8cf0;
+    color: #2d8cf0;
+  }
+}
+
+@keyframes primaryAnimation {
+  0%{
+    background-color: #2d8cf0;
+    border-color: #2d8cf0;
+  }
+  100%{
+    background-color: #0866ca;
+    border-color: #0866ca;
+  }
+}
+
+@keyframes infoAnimation {
+  0%{
+    background-color: #2db7f5;
+    border-color: #2db7f5;
+  }
+  100%{
+    background-color: #27afec;
+    border-color: #27afec;
+  }
+}
+
+@keyframes successAnimation {
+  0%{
+    background-color: #19be6b;
+    border-color: #19be6b;
+  }
+  100%{
+    background-color: #09d06c;
+    border-color: #09d06c
+  }
+}
+
+@keyframes warnAnimation {
+  0%{
+    background-color: #f90;
+    border-color: #f90;
+  }
+  100%{
+    background-color: #da8709;
+    border-color: #da8709;
+  }
+}
+
+@keyframes errorAnimation {
+  0%{
+    background-color: #ed3f14;
+    border-color: #ed3f14;
+  }
+  100%{
+    background-color: #da3006;
+    border-color: #da3006;
+  }
+}

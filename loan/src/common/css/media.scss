@@ -1,0 +1,27 @@
+/*
+屏幕自适应
+extra-small: <768px
+small: 768 -> 992
+middle: 992 -> 1200
+large: >1200
+*/
+$small: 768px;
+$middle:992px;
+$large: 1200px;
+
+//超小屏幕:手机
+@media (max-width: $small) {
+  @include generate_grid(xs);
+}
+//小屏幕: pad
+@media (min-width: $small) and (max-width: $middle) {
+  @include generate_grid(sm);
+}
+//中等屏幕大小: 普通桌面
+@media (min-width: $middle) and (max-width: $large) {
+  @include generate_grid(md);
+}
+//大屏幕: 大桌面显示器
+@media (min-width: $large) {
+  @include generate_grid(lg);
+}
