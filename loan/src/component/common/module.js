@@ -107,16 +107,7 @@ export function Button (props) {
 //   }
 // }
 
-// export class Button extends React.Component {
-//   render () {
-//     let { type } = this.props;
-//     return (
-//       <div className="cm-button">
-//         <button type="button" className={type} onClick={this.props.click.bind(this)}>{this.props.children}</button>
-//       </div>
-//     )
-//   }
-// }
+
 
 
 export function getCookie(name){
