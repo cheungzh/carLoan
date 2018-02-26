@@ -9,12 +9,12 @@
 1.克隆项目：      git clone https://github.com/cheungzh/carLoan.git
 2.安装nodejs
 3.安装依赖:
-  前端: cd /carLoan/loan  npm install
-  后端: cd /carLoan/server  npm install
+  前端: cd /loan  npm install
+  后端: cd /server  npm install
 4.启动服务:
-  前端: cd /carLoan/loan npm run dev
-  后端: cd /carLoan/server npm run start
-5.发布代码：  cd /carLoan/loan  npm run build
+  前端: cd /loan npm run dev
+  后端: cd /server npm run start
+5.发布代码：  cd /loan  npm run build
 ```
 
 
