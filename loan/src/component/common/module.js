@@ -1,6 +1,7 @@
+import '../../common/css/form.scss';
+
 import React from 'react';
 import PropTypes from 'prop-types';
-
 export function Row (props) {
   let {gutter} = props;
   if(isNaN(gutter)) {
@@ -51,7 +52,7 @@ export function Button (props) {
   let { type } = props;
   return (
     <div className="cm-button">
-      <button type="button" className={type} onClick={props.click.bind(this)}>{props.children}</button>
+      <button type="button" className={type} onClick={props.click}>{props.children}</button>
     </div>
   )
 }
