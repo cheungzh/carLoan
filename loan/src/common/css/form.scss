@@ -1,3 +1,10 @@
+@mixin clearFix {
+  &:after{
+    display: block;
+    content: "";
+    clear: both;
+  }
+}
 /*
 input组件样式
 */
@@ -93,7 +100,6 @@ input组件样式
       }
     }
     &.info{
-      border-color: #2db7f5;
       color:#fff;
       background-color: #2db7f5;
       &:not(.disabled):hover{
