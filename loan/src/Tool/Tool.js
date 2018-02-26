@@ -40,31 +40,10 @@ Tool.mFetch = function (params) {
       .then( res => {
         if(res.code !== 10000) {
           console.log('code 20000');
-          Tool.tip({message: res.message,type: 'error'});
           return reject()
         }
         return resolve(res);
       })
   })
 };
-Tool.tip = (function () {
-  var div,timer;
-  return function ({message,type}) {
-    var className = 'tool-tip ' + (type || "");
-    if(div) {
-      div.innerHTML = message;
-      div.style.opacity = 1;
-      div.setAttribute('class',className);
-    }else {
-      div = document.createElement('div');
-      div.innerHTML = message;
-      div.setAttribute('class',className);
-      document.body.appendChild(div);
-    }
-    timer = setTimeout(function () {
-      div.style.opacity = 0;
-    },2000);
-    return div;
-  }
-})();
 export default Tool;
