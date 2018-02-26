@@ -1,7 +1,7 @@
 import Tool from '../Tool/Tool';
 
 export function fetchProduct (params={}) {
-  return function (dispatch,getState) {
+  return function (dispatch) {
     dispatch({type: 'FETCH_PRODUCT'});
     Tool.mFetch({
       url:'/api/product/list',
