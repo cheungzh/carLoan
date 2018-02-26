@@ -17,4 +17,16 @@
 5.发布代码：  cd /loan  npm run build
 ```
 
+### 代理设置
+loan/build/webpack.dev.js
+```
+proxy: {
+      '/api': {
+        target: 'http://10.10.16.199:3000/',
+        pathRewrite: {'^/api' : ''}
+      },
+    },
+```
+target 根据服务器地址自行更改
+
 
