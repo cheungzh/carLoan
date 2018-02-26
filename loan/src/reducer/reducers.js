@@ -32,7 +32,7 @@ const loginInfo = (state=defaultState.loginInfo,action) => {
 const productList = (state=defaultState.productList,action) => {
   switch (action.type) {
     case type.RECEIVE_PRODUCT:
-      return [...state,...action.payload];
+      return action.payload;
     case type.FETCH_PRODUCT:
       return state;
     default: return state;
