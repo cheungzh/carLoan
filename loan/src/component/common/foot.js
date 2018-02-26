@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Icon } from 'antd';
+
 function Foot (props) {
   let  { pathname } = props.location;
   return (
