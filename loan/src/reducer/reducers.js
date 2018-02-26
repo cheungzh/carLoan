@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 import * as type from '../action/actions';
-import { getCookie } from '../component/common/grid';
+import { getCookie } from '../component/common/module';
 import Immutable, {fromJS} from 'immutable';
 const defaultState = {
   loading: false,
