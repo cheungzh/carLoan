@@ -61,4 +61,3 @@ $grid_columns: 24;
   @include loop_grid_columns($grid_columns,$size,push);
   @include loop_grid_columns($grid_columns,$size,offset);
 }
-
