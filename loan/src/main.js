@@ -1,4 +1,3 @@
-// import '../node_modules/antd/dist/antd.css'
 import './css/style.scss';
 import React from 'react';
 import ReactDom from 'react-dom';
@@ -7,7 +6,6 @@ import {Provider} from 'react-redux'
 import store from './store/store';
 import Routes from './route/routes';
 import Login from './component/login/login';
-// import LoginForm from './component/login/LoginForm';
 // console.log(store.getState());
 
 ReactDom.render(
