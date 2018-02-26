@@ -83,10 +83,10 @@ $gutter: 14px;
     float: right;
   }
   .login-title {
+    margin-bottom: 15px;
     text-align: center;
     font-size: 18px;
     font-weight: 700;
-    margin-bottom: 15px;
   }
 }
 
@@ -97,13 +97,13 @@ $gutter: 14px;
   width: 100%;
   height: 100%;
   .product-foot {
-    width: 100%;
-    box-sizing: border-box;
     position: fixed;
     left: 0;
     right: 0;
     bottom: 0;
     z-index: 999;
+    box-sizing: border-box;
+    width: 100%;
   }
 }
 
@@ -111,18 +111,18 @@ $gutter: 14px;
 底部公用
 */
 .foot {
+  display: flex;
   width: 100%;
   margin-bottom: 0;
-  display: flex;
   background-color: #fff;
   .foot-name {
     flex: 1;
     display: flex;
     box-sizing: border-box;
-    align-items: center;
-    justify-content: center;
     padding: 10px 0;
     border: none;
+    align-items: center;
+    justify-content: center;
     a {
       color: #333;
       &.active {
@@ -141,24 +141,24 @@ $gutter: 14px;
   padding: 35px $gutter/2;
   background-color: $ground_color;
   .product-search {
-    box-sizing: border-box;
-    width: 100%;
-    height: 35px;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 999;
+    box-sizing: border-box;
+    width: 100%;
+    height: 35px;
   }
   .product-condition {
     box-sizing: border-box;
     width: 100%;
     height: auto;
     padding: 5px 0;
-    margin-top: 14px;
     border-left: $gutter/2 solid $ground_color;
     border-right: $gutter/2 solid $ground_color;
     border-radius: 5px;
+    margin-top: 14px;
     background-color: #fff;
   }
 
@@ -168,11 +168,11 @@ $gutter: 14px;
 条件查询
 */
 .condition {
+  display: flex;
   box-sizing: border-box;
   width: 100%;
   height: auto;
   margin-bottom: 0;
-  display: flex;
   li {
     flex: 1;
     display: flex;
@@ -200,6 +200,7 @@ $gutter: 14px;
   &:nth-child(even) {
     float: right;
   }
+  box-sizing: border-box;
   width: 50%;
   height: 200px;
   padding: 10px;
@@ -209,12 +210,11 @@ $gutter: 14px;
   border-radius: 3px;
   margin-top: $gutter;
   background-color: #fff;
-  box-sizing: border-box;
   font-size: 14px;
   .product-img {
+    box-sizing: content-box;
     width: 100%;
     height: 130px;
-    box-sizing: content-box;
     img {
       width: 100%;
       height: inherit;
