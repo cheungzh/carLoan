@@ -12,10 +12,10 @@ class CartList extends React.Component {
           <p className="product-pic">
             <img src={detail.productPic} alt="" className="product-pic"/>
           </p>
-          <section className="product-description">
+          <div className="product-description">
             <p className="product-name">{detail.productName}</p>
             <p className="product-price">{detail.productPrice}</p>
-          </section>
+          </div>
         </div>
         <div className="list-control">
           <p className="count-dec" onClick={this.props.countDec}>-</p>
