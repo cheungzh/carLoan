@@ -4,14 +4,14 @@ class CartList extends React.Component {
   render () {
     let { detail } = this.props;
     return (
-      <article className="cart-list">
+      <section className="cart-list">
         <div className="list-check">
           <input type="radio" className=""/>
         </div>
         <div className="list-contain">
-          <p className="product-pic">
+          <div className="product-pic">
             <img src={detail.productPic} alt="" className="product-pic"/>
-          </p>
+          </div>
           <div className="product-description">
             <p className="product-name">{detail.productName}</p>
             <p className="product-price">{detail.productPrice}</p>
@@ -23,7 +23,7 @@ class CartList extends React.Component {
           {/*<input type="text" defaultValue={detail.count} className="count-input"/>*/}
           <p className="count-sum" onClick={this.props.countSum}>+</p>
         </div>
-      </article>
+      </section>
     )
   }
 }
