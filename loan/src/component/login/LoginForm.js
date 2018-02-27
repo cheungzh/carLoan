@@ -81,6 +81,7 @@ class LoginForm extends React.Component {
     )
   }
 }
+
 export default connect((state) => {
   return {
     loginForm: state.loginInfo
