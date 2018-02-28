@@ -6,7 +6,6 @@ class Header extends React.Component {
 
   render () {
     let { title } = this.props;
-    console.log(this.props);
     return (
       <div className="header">
         <span className="header-back" onClick={this.goBack.bind(this)}>
