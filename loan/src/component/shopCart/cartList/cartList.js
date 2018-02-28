@@ -6,7 +6,7 @@ class CartList extends React.Component {
     return (
       <section className="cart-list">
         <div className="list-check">
-          <input type="radio" className=""/>
+          <input type="checkbox" defaultChecked={detail.checked} onChange={this.props.check}/>
         </div>
         <div className="list-contain">
           <div className="product-pic">
@@ -14,7 +14,8 @@ class CartList extends React.Component {
           </div>
           <div className="product-description">
             <p className="product-name">{detail.productName}</p>
-            <p className="product-price">{detail.productPrice}</p>
+            <p className="product-price">¥{detail.productPrice}</p>
+            <p className="product-stock">库存剩余:{detail.stock}</p>
           </div>
         </div>
         <div className="list-control">

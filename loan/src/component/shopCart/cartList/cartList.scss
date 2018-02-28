@@ -25,6 +25,13 @@ body,ol,ul,h1,h2,h3,h4,h5,h6,p,th,td,dl,dd,form,fieldset,legend,input,textarea,s
     .product-description {
       width: 60%;
       margin-left: 10px;
+      .product-price {
+        color: red;
+      }
+      .product-stock {
+        color: #7f7f7f;
+        font-size: 1.2rem;
+      }
     }
   }
   .list-check {
