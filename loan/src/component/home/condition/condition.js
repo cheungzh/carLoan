@@ -1,3 +1,4 @@
+import './condition.scss';
 import React from 'react';
 import {connect} from 'react-redux';
 import {Icon} from 'antd';
@@ -17,14 +18,14 @@ class Condition extends React.Component {
           <span className="condition-title">销量</span>
           <span className="condition-control">
           <Icon type="up"/>
-          <Icon type="down"/>
+          {/*<Icon type="down"/>*/}
         </span>
         </li>
         <li onClick={this.filter.bind(this, 'price')}>
           <span className="condition-title">价格</span>
           <span className="condition-control">
           <Icon type="up"/>
-          <Icon type="down"/>
+          {/*<Icon type="down"/>*/}
         </span>
         </li>
         <li onClick={this.filter.bind(this, 'filter')}>
