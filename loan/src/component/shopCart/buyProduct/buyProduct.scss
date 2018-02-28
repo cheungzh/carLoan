@@ -1,0 +1,73 @@
+.buy-control {
+  width: 100%;
+  .buy-form {
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    height: 36px;
+    padding: 10px 0 10px 10px;
+    .buy-checkall {
+      flex: 1;
+      justify-content: flex-start;
+      position: relative;
+      input[type=checkbox] {
+        display: none;
+      }
+      input[type=checkbox] + label {
+        position: relative;
+        width:18px;
+        height:18px;
+        vertical-align: middle;
+        background-color: white;
+        border-radius: 5px;
+        border:1px solid #d3d3d3;
+        display: inline-block;
+        text-align: center;
+        line-height: 16px;
+      }
+      input[type=checkbox]:checked + label {
+        background-color: #FF0000;
+        &:after {
+          content: '  ';
+          position: absolute;
+          top: 1.5px;
+          left: 5px;
+          display: table;
+          width: 6px;
+          height: 10px;
+          border: 2px solid #fff;
+          border-top: 0;
+          border-left: 0;
+          transform: rotate(45deg);
+        }
+      }
+    }
+    .buy-account {
+      flex: 3;
+      display: flex;
+      justify-content: flex-end;
+      .buy-product {
+        display: inline-block;
+        width: auto;
+        height: 36px;
+        line-height: 36px;
+        padding: 0 15px;
+        text-align: center;
+        color: #fff;
+        background: linear-gradient(to right bottom,#FFB200,#FF0000);
+      }
+      .buy-price {
+        margin-right: 10px;
+        height: 36px;
+        line-height: 36px;
+        color: #000c17;
+        font-weight: 600;
+        span{
+          margin-left: 30px;
+          font-weight: normal;
+          color: #FF0000;
+        }
+      }
+    }
+  }
+}
