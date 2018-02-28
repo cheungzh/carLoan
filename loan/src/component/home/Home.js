@@ -14,7 +14,6 @@ class Home extends React.Component {
       <div className="product-home">
         <header className="product-search">
           <Input type="text" placeholder="请输入品牌、色号、名称等查询"/>
-          {/*<Input type='text' prefix={<Icon type="search"/>} placeholder="请输入品牌、色号、名称等查询"/>*/}
         </header>
         <section className="product-condition">
           <Condition />
