@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Form, Input, Checkbox, Icon, Button } from 'antd';
-import Tool from '../../Tool/Tool';
+import Tool from '../../../Tool/Tool';
 
 const FormItem = Form.Item;
 
@@ -9,39 +9,12 @@ class LoginForm extends React.Component {
   constructor (props) {
     super(props);
   }
-  loginIn (dispatch) {
-    this.props.form.validateFields((err,value) => {
-      if(!err) {
-        Tool.mFetch({
-          url: '/api/user/login',
-          data: {
-            username: value.username,
-            password: value.password
-          }
-        }).then((res) => {
-          console.log(res);
-          if(value.isMemory) {
-            document.cookie = 'username=' + value.username;
-          }
-          Tool.tip({message: res.message});
-          dispatch({
-            type: "LOGIN_SUCCESS",
-            payload: {
-                username: value.username,
-                loginState: true
-              }
-          });
-        });
-      }
-    })
-  }
   render () {
     const {getFieldDecorator } = this.props.form;
     const { loginForm, dispatch } = this.props;
     console.log(this.props);
     return (
       <div className="login-form">
-        <div className="login-title">登陆</div>
         <Form>
           <FormItem hasFeedback={true}>
             {getFieldDecorator('username',{
@@ -80,6 +53,32 @@ class LoginForm extends React.Component {
       </div>
     )
   }
+  loginIn (dispatch) {
+    this.props.form.validateFields((err,value) => {
+      if(!err) {
+        Tool.mFetch({
+          url: '/api/user/login',
+          data: {
+            username: value.username,
+            password: value.password
+          }
+        }).then((res) => {
+          if(value.isMemory) {
+            document.cookie = 'username=' + value.username + ";path=/";
+          }
+          dispatch({
+            type: "LOGIN_SUCCESS",
+            payload: {
+              username: value.username,
+              loginState: true
+            }
+          });
+          this.props.login();
+        });
+      }
+    })
+  }
+
 }
 
 export default connect((state) => {
