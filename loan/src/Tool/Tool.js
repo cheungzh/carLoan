@@ -46,4 +46,28 @@ Tool.mFetch = function (params) {
       })
   })
 };
+
+/*
+ * tip提示
+ * */
+Tool.tip = (function () {
+  let div;
+  return function ({message,type}) {
+    if(div) {
+      div.innerHTML = message;
+      document.getElementsByClassName('tool-tip')[0].style.display = 'block';
+    }else{
+      div = document.createElement('div');
+      let className = type || '';
+      div.innerHTML = message;
+      div.setAttribute('class','tool-tip ' + className);
+      document.getElementsByTagName('body')[0].appendChild(div);
+    }
+    setTimeout(() =>{
+      document.getElementsByClassName('tool-tip')[0].style.display = 'none';
+    },2000);
+    return div;
+  }
+
+})();
 export default Tool;
