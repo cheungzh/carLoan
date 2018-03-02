@@ -2,13 +2,14 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Tool from '../../../Tool/Tool';
 import { checkItem } from '../../../action/actionCreaters';
+
 //购物车条目
 function ListItem(props) {
   let { detail } = props;
   return (
     <section className="cart-list">
       <div className="list-check">
-        <input type="checkbox" defaultChecked={detail.checked} onChange={props.check}/>
+        <input type="checkbox" checked={detail.checked || false} onChange={props.check}/>
       </div>
       <div className="list-contain">
         <div className="product-pic">
@@ -71,11 +72,12 @@ class CartList extends React.Component {
 }
 
 const getProduct = (state) => {
-  let { addedIds, productsById, quantityByIds } = state;
+  let { addedIds, productsById, quantityByIds, chooseIds } = state;
   return addedIds.map(id => {
     return {
       ...productsById[id],
-      count: quantityByIds[id]
+      count: quantityByIds[id],
+      checked: (chooseIds.indexOf(id) === -1) ? false : true
     }
   })
 };
