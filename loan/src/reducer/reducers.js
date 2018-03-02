@@ -1,13 +1,9 @@
 import { combineReducers } from 'redux';
 import * as type from '../action/actions';
 import { getCookie } from '../component/common/module';
+import cartList from './cartReducer/index';
 
-import cartList from './cartReducer/product';
-
-
-import Immutable, {fromJS,is} from 'immutable';
 const defaultState = {
-  loading: false,
   loginInfo: {
     loginState: false,
     username: getCookie('username') || ''

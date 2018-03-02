@@ -1,15 +1,13 @@
-import { combineReducers } from 'redux'
+import { ADD_TO_CART, RECEIVE_PRODUCT, DEC_FROM_CART, CHECK_OUT_CART } from '../../action/actions';
 
-import { ADD_TO_CART, RECEIVE_PRODUCT, DEC_FROM_CART } from '../../action/actions';
 const initialState = {
   addedIds: [],
-  quantityByIds: {},
   productsById: {}
 };
 
 
 /*增加产品id*/
-const addedIds = (state=initialState.addedIds,action) => {
+export const addedIds = (state=initialState.addedIds,action) => {
   switch (action.type) {
     case ADD_TO_CART:
       let { productId } = action;
@@ -18,6 +16,9 @@ const addedIds = (state=initialState.addedIds,action) => {
       }else {
         return [...state,productId];
       }
+    case CHECK_OUT_CART:
+      let checkOutIds = action.checkOutIds;
+      return [...state.filter(id => checkOutIds.indexOf(id) === -1)]
     default:
       return state;
   }
@@ -36,12 +37,12 @@ const products = (state,action) => {
       return {
         ...state,
         stock: state.stock + 1
-      }
+      };
     default: return state;
   }
 };
 
-const productsById = (state = {},action) => {
+export const productsById = (state = {},action) => {
   switch (action.type) {
     case RECEIVE_PRODUCT:
       return {
@@ -63,29 +64,10 @@ const productsById = (state = {},action) => {
   }
 };
 
-/*购物车数量增减*/
-const quantityByIds = (state=initialState.quantityByIds,action) => {
-  let { productId } = action;
-  switch (action.type) {
-    case ADD_TO_CART:
-      return {
-        ...state,
-        [productId]: state[productId] + 1 || 1
-      };
-    case DEC_FROM_CART:
-      return {
-        ...state,
-        [productId]: state[productId] - 1
-      };
-    default:
-      return state;
-  }
+//获取添加到购物车的产品
+export const getProduct = (state) => {
+  let { addedIds, productsById } = state;
+  return addedIds.map(id => {
+    return productsById[id]
+  })
 };
-
-
-
-export default combineReducers({
-  addedIds,
-  productsById,
-  quantityByIds
-})
