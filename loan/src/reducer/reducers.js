@@ -1,16 +1,19 @@
 import { combineReducers } from 'redux';
 import * as type from '../action/actions';
 import { getCookie } from '../component/common/module';
-import Immutable, {fromJS} from 'immutable';
+
+import cartList from './cartReducer/product';
+
+
+import Immutable, {fromJS,is} from 'immutable';
 const defaultState = {
   loading: false,
   loginInfo: {
     loginState: false,
     username: getCookie('username') || ''
   },
-  productList: []
+  productList: [],
 };
-
 
 /*
 * 验证登陆,更改登陆状态
@@ -39,7 +42,9 @@ const productList = (state=defaultState.productList,action) => {
   }
 };
 
+
 export default combineReducers({
   loginInfo,
-  productList
+  productList,
+  cartList
 })
