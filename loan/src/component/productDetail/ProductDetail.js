@@ -7,22 +7,6 @@ import Header from '../common/header/header';
 import { addToCart } from '../../action/actionCreaters';
 
 class ProductDetail extends React.Component {
-  // constructor (props) {
-  //   super(props);
-  //   let listItem = props.location.state;
-  //   /*模拟数据*/
-  //   this.state = {
-  //     detail: {
-  //       id: listItem.id,
-  //       productPics: ['http://www.givenchybeauty.cn/files/2017/12/le-rouge-sculpt-pro.jpg','https://gd3.alicdn.com/imgextra/i2/739171675/TB2ePpWedLO8KJjSZFxXXaGEVXa_!!739171675.jpg_400x400.jpg'],
-  //       productName: listItem.productName,
-  //       productPrice: listItem.price,
-  //       stock: listItem.stock,
-  //       productPic: listItem.productPic,
-  //       count: 3
-  //     }
-  //   }
-  // }
   componentDidMount () {
     const { location } = this.props;
     let id = location.state.id;
