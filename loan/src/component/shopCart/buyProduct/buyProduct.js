@@ -1,7 +1,5 @@
 import React from 'react';
-import { Button, CheckBox } from '../../common/module';
 export default function buyControl(props) {
-
   return (
     <section className="buy-control">
       <form className="buy-form">
@@ -13,7 +11,7 @@ export default function buyControl(props) {
         <article className="buy-account">
           <p className="buy-price">合计:
             <span>
-              {props.price || "¥0"}
+              ¥{props.total || 0}
             </span>
           </p>
           <span className="buy-product" onClick={props.buyProduct}>结算</span>
