@@ -1,4 +1,3 @@
-import './buyProduct.scss';
 import React from 'react';
 import { Button, CheckBox } from '../../common/module';
 export default function buyControl(props) {
