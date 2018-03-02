@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route } from 'react-router-dom'
-import Foot from './common/foot';
+import Foot from './common/footer/foot';
 import Home from './home/Home';
 import Design from './diy/diy';
 import Personal from './personal/Personal';
